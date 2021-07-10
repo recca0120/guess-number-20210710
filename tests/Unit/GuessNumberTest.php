@@ -1,8 +1,9 @@
 <?php
 
-
 namespace Tests\Unit;
 
+use App\GuessNumber;
+use App\Random;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 
@@ -15,6 +16,7 @@ class GuessNumberTest extends TestCase
         parent::setUp();
         $random = Mockery::mock(Random::class);
         $random->shouldReceive('getValue')->andReturn('1234');
+
         $this->guessNumber = new GuessNumber($random);
     }
 
